@@ -1,8 +1,8 @@
 gopherweblink (1.03) unstable; urgency=low
 
-  * Fixed Numb= setting for .info.
+  * Fixed Numb= setting for .info.  Closes: #135308.
 
- -- John Goerzen <jgoerzen@complete.org>  Thu, 21 Dec 2000 19:50:14 -0500
+ -- John Goerzen <jgoerzen@complete.org>  Tue, 19 Mar 2002 09:19:47 -0500
 
 gopherweblink (1.02) unstable; urgency=low
 
