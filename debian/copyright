@@ -1,10 +1,10 @@
 This package was debianized by John Goerzen <jgoerzen@complete.org> on
 Wed, 20 Dec 2000 11:46:23 -0500.
 
-It was downloaded from <fill in ftp site>
+You can find it at gopher://quux.org/
 
-Upstream Author(s): <put author(s) name and email here>
+Upstream Author(s): John Goerzen <jgoerzen@complete.org>
 
 Copyright:
 
-<Must follow here>
+Licensed under the GNU GPL.  Find it at /usr/share/common-licenses/GPL.
