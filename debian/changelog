@@ -1,3 +1,9 @@
+gopherweblink (1.00-2) unstable; urgency=low
+
+  * Delete bad refreshtime thing.
+
+ -- John Goerzen <jgoerzen@complete.org>  Wed, 20 Dec 2000 12:50:14 -0500
+
 gopherweblink (1.00-1) unstable; urgency=low
 
   * Initial Release.
