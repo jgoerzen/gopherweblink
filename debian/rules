@@ -20,10 +20,6 @@ build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
 
-	# Add here commands to compile the package.
-	$(MAKE)
-	#/usr/bin/docbook-to-man debian/gopherweblink.sgml > gopherweblink.1
-
 	touch build-stamp
 
 clean:
@@ -32,7 +28,6 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
-	-$(MAKE) clean
 
 	dh_clean
 
@@ -42,16 +37,15 @@ install: build
 	dh_clean -k
 	dh_installdirs
 
-	# Add here commands to install the package into debian/tmp.
-	$(MAKE) install DESTDIR=`pwd`/debian/tmp
-
-
-# Build architecture-independent files here.
-binary-indep: build install
-# We have nothing to do by default.
+	cp gopherweblink debian/tmp/usr/bin
+	cp gopherweblink-template.m4 debian/tmp/etc
 
 # Build architecture-dependent files here.
 binary-arch: build install
+# We have nothing to do by default.
+
+# Build architecture-independent files here.
+binary-indep: build install
 #	dh_testversion
 	dh_testdir
 	dh_testroot

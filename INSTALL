@@ -1,0 +1,23 @@
+To install this:
+
+ON DEBIAN SYSTEMS:
+  Just install the .deb.  Or, dpkg-buildpackage -rfakeroot -us -uc to build
+  it.
+
+ALL OTHERS:
+
+1. Modify gopherweblink to refer to the appropriate location for the
+   template file and your shell.  Also, it requires GNU make;
+   some systems call it "gmake".  You may need to make it call gmake.
+
+2. Copy gopherweblink to an appropriate binary location.
+
+3. Copy the template file to an appropriate location.
+
+4. Copy gopherweblink.1, the manpage, to an appropriate location.
+
+REQUIREMENTS:
+ * GNU m4
+ * GNU make
+
+GNU software can be found on ftp.gnu.org

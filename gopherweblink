@@ -10,7 +10,7 @@ exec make -f $MFPATH MAKEFILE=$MFPATH "$@"
 # $Id#
 
 EXT=gwlnk
-TEMPLATE=gopherweblink-template.m4
+TEMPLATE=/etc/gopherweblink-template.m4
 
 # Run gopherweblink RECURSE=yes if you want to enable recursion.
 
