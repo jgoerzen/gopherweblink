@@ -24,7 +24,7 @@ DIRS := $(shell if [ "$(RECURSE)" = "yes" ]; then find . -type d -maxdepth 1 | g
 
 all: $(HTML) subdirs $(DIRS)
 
-%.html: %.gwlnk
+%.html: %.gwlnk $(TEMPLATE)
 	cat $< $(TEMPLATE) | m4 -P > $@
 
 .PHONY: subdirs $(DIRS)

@@ -1,6 +1,7 @@
-gopherweblink (1.00-2) unstable; urgency=low
+gopherweblink (1.01) unstable; urgency=low
 
   * Delete bad refreshtime thing.
+  * Rebuild files if the template has changed.
 
  -- John Goerzen <jgoerzen@complete.org>  Wed, 20 Dec 2000 12:50:14 -0500
 

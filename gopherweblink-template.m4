@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="refresh" content="5;URL=DESTURL">
+<META HTTP-EQUIV="refresh" content="2;URL=DESTURL">
 <TITLE>Gopher to Web Link</TITLE>
 </HEAD>
 <BODY>
