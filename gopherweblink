@@ -20,16 +20,41 @@ TEMPLATE=/etc/gopherweblink-template.m4
 
 SRCS := $(wildcard *.$(EXT))
 HTML := $(patsubst %.$(EXT),%.html,$(SRCS))
+
+# We do this for the info so it won't complain if there's no .info.
+
+INFOSRC := $(wildcard .info)
+INFOLNKS := $(patsubst .info,.infolinks,$(INFOSRC))
 DIRS := $(shell if [ "$(RECURSE)" = "yes" ]; then find . -type d -maxdepth 1 | grep -v '^\.$$'; fi)
 
-all: $(HTML) subdirs $(DIRS)
+all: $(HTML) $(INFOLNKS) subdirs $(DIRS)
 
 %.html: %.gwlnk $(TEMPLATE)
 	cat $< $(TEMPLATE) | m4 -P > $@
 
 .PHONY: subdirs $(DIRS)
 
+.infolinks: .info $(MAKEFILE)
+	perl -x/ $(MAKEFILE) < $< > $@
+
 subdirs: $(DIRS)
 
 $(DIRS):
 	$(MAKE) -C $@ -f $(MAKEFILE)
+
+ifeq "BLACK" "WHITE"
+
+#!/usr/bin/perl		[fodder for -x]
+while (defined($line = <STDIN>)) {
+	chomp $line;
+	print <<"EOF";
+Name=$line
+Type=i
+Path=fake
+Numb=1
+
+EOF
+}
+
+__END__
+endif
