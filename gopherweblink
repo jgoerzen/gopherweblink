@@ -45,13 +45,15 @@ $(DIRS):
 ifeq "BLACK" "WHITE"
 
 #!/usr/bin/perl		[fodder for -x]
+$number = 0;
 while (defined($line = <STDIN>)) {
 	chomp $line;
+	$number++;
 	print <<"EOF";
 Name=$line
 Type=i
 Path=fake
-Numb=1
+Numb=$number
 
 EOF
 }
