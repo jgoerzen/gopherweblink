@@ -1,0 +1,70 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH GOPHERWEBLINK 1 "December 20, 2000"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+gopherweblink \- program to generate web link files for gopher
+.SH SYNOPSIS
+.B gopherweblink
+.RI [ RECURSE=yes ] " files" ...
+.SH DESCRIPTION
+.br
+.PP
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
+.\" respectively.
+\fBgopherweblink\fP is a program that will generate HTML files from
+specification files, such that it is possible to greate a link to
+a web server from a gopher document tree.  Since the gopher directory
+specification does not support URLs, a workaround is required.  One
+way to put URL references into the gopher directory is to place
+HTML files in the gopher tree that use the META REFRESH to load the
+real destination (gopher can serve up HTML).  This can be a pain, so
+\fBgopherweblink\fP is here to help automate the generation of these files.
+
+.br
+To use \fBgopherweblink\fP, you will first create .gwlnk files in any
+directory you linke on the gopher server.  Then, you'll run
+\fBgopherweblink\fP to process these .gwlnk files and generate .html
+files.  Finally, you will add entries to your .Links files in relevant
+directories to refer to these .html files, in the gopher tree,
+as the target of the link.
+
+.br
+The .gwlnk files have a simple format.  Each file has exactly one
+line, which looks like this:
+.br
+
+m4_define(`DESTURL', `http://www.complete.org')
+.br
+
+When you run \fBgopherweblink\fP, it will process each .gwlnk file
+and generate an appropriate .html file with the link.
+
+.SH OPTIONS
+This program has only one option.  You can specify options in the
+usual \fBmake\fP(1) manner as well.
+.TP
+.B RECURSE=yes
+Tells \fBgopherweblink\fP to process all .gwlnk files in all
+subdirectories of the current directory, instead of only the .gwlnk
+files in the current directory.
+.SH SEE ALSO
+.BR make (1),
+.BR gopherd (8).
+.br
+.SH AUTHOR
+This manual page was written by John Goerzen <jgoerzen@complete.org>.
