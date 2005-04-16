@@ -1,0 +1,10 @@
+gopherweblink (1.00-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- John Goerzen <jgoerzen@complete.org>  Wed, 20 Dec 2000 11:46:23 -0500
+
+Local variables:
+mode: debian-changelog
+add-log-mailing-address "jgoerzen@complete.org"
+End:

@@ -1,0 +1,6 @@
+m4_define(`DESTURL', `http://www.complete.org')
+m4_dnl    All that you have to do for your own files is make a line like
+m4_dnl    that one above.  The single quotes around the items are
+m4_dnl    optional but recommended.  If you want to put comments in
+m4_dnl    your files, use "m4_dnl" -- it will act like the "#" does in
+m4_dnl    shells.

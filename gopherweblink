@@ -1,0 +1,35 @@
+#!/bin/bash
+# The next line finds the path. \
+MFPATH=$(cd `dirname $0`; /bin/pwd)/`basename $0`
+# The next line restarts with make. \
+exec make -f $MFPATH MAKEFILE=$MFPATH "$@"
+
+#############################################
+# From here on, this file is parsed by make.
+#############################################
+# $Id#
+
+EXT=gwlnk
+TEMPLATE=gopherweblink-template.m4
+
+# Run gopherweblink RECURSE=yes if you want to enable recursion.
+
+# RECURSE=yes
+
+####
+
+SRCS := $(wildcard *.$(EXT))
+HTML := $(patsubst %.$(EXT),%.html,$(SRCS))
+DIRS := $(shell if [ "$(RECURSE)" = "yes" ]; then find . -type d -maxdepth 1 | grep -v '^\.$$'; fi)
+
+all: $(HTML) subdirs $(DIRS)
+
+%.html: %.gwlnk
+	cat $< $(TEMPLATE) | m4 -P > $@
+
+.PHONY: subdirs $(DIRS)
+
+subdirs: $(DIRS)
+
+$(DIRS):
+	$(MAKE) -C $@ -f $(MAKEFILE)

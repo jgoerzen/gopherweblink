@@ -1,0 +1,12 @@
+Source: gopherweblink
+Section: unknown
+Priority: optional
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Build-Depends: debhelper
+Standards-Version: 3.1.1
+
+Package: gopherweblink
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
