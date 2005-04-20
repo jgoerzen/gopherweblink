@@ -1,3 +1,9 @@
+gopherweblink (1.04) unstable; urgency=low
+
+  * Removed unversioned dep on bash.  Closes: #216533.
+
+ -- John Goerzen <jgoerzen@complete.org>  Tue, 19 Apr 2005 23:48:35 -0500
+
 gopherweblink (1.03) unstable; urgency=low
 
   * Fixed Numb= setting for .info.  Closes: #135308.

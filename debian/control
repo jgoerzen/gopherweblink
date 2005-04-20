@@ -7,7 +7,7 @@ Standards-Version: 3.1.1
 
 Package: gopherweblink
 Architecture: all
-Depends: make, m4, bash
+Depends: make, m4
 Suggests: gopherd
 Description: Generate web link files for gopher servers
  This program is used to let you add links to web sites from
